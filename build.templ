@@ -1,0 +1,4 @@
+#!/bin/bash
+export USERUID=$(id -u)
+
+docker image build --build-arg USERUID=$USERUID -t {{.Env.IMAGENAME}} .

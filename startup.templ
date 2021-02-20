@@ -1,0 +1,10 @@
+#!/bin/bash
+#  start up the trafficserver.  
+#  don't forget to create the folder specified in the docker-compose.yml file
+#  ie., mkdir -p $HOME/data/vproxy/log/trafficserver; chmod 777 trafficserver
+
+mkdir -p {{.Env.DATADIR}}/log/trafficserver 
+
+docker network create {{.Env.NETWORK}}
+docker-compose -f docker-compose.yml up -d
+

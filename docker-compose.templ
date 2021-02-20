@@ -1,0 +1,17 @@
+version: '3.3'
+
+networks:
+  default:
+    external:
+      name: {{.Env.NETWORK}}
+
+services:
+
+  shibb:
+        image: {{.Env.IMAGENAME}}
+        container_name: {{.Env.CONTAINER}}
+        restart: always
+        ports:
+                - "{{.Env.PROXYPORT}}:8080"
+        volumes: 
+          - {{.Env.DATADIR}}/log/trafficserver:/var/log/trafficserver

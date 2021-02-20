@@ -1,0 +1,14 @@
+Other Links
+https://docs.trafficserver.apache.org
+https://packages.debian.org/buster/amd64/trafficserver/download
+Download the trafficeserver debian packate from the above link or using curl as follows:
+  curl -o trafficserver.deb http://http.us.debian.org/debian/pool/main/t/trafficserver/trafficserver_8.0.2+ds-1+deb10u4_amd64.deb
+
+Update the vars.env file 
+    DATADIR, IMAGENAME, CONTAINER, PROXYPORT, NETWORK
+Run the gen-vars.sh script to create docker-compose.xml, startup, build.sh files.
+Run the build.sh
+Run startup.sh
+
+NOTEs:
+  You can modify the ip_allow.config and records.config file per your configuration.
